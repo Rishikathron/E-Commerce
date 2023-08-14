@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ShopService } from './ShopService/shop.service';
 
 @Component({
   selector: 'app-shop',
@@ -6,5 +7,30 @@ import { Component } from '@angular/core';
   styleUrls: ['./shop.component.css']
 })
 export class ShopComponent {
+  constructor(private shopservice:ShopService){}
+  products : any[] = [];
+
+//   {
+//     id:1,
+//     title:'...',
+//     price:'...',
+//     category:'...',
+//     description:'...',
+//     image:'...'
+// },
+    
+  ngOnInit(){
+    this.shopservice.getAllProducts().subscribe((data : any[])=>{
+       this.products = [...data]
+       console.log(data);
+       
+    })
+    console.log("inside shop product array",this.products);
+    
+  }
+
+  
+  
+  
 
 }
