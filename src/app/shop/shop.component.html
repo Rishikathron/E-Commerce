@@ -42,9 +42,10 @@
 
         <div class="col-lg-9">
             
-            <div class="row" *ngFor="let product of products ;let i = index">
-                <div class="product-grp">
-                    <app-productcard [productItem] = product[i]></app-productcard>                    
+            <div class="row product-grp" *ngFor="let product of products ;let i = index">
+                <div class="">
+                    <app-productcard [productItem] = product></app-productcard>       
+                    sldjflaj             
                 </div>
             </div>
 

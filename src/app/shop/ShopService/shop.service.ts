@@ -11,6 +11,6 @@ export class ShopService {
   constructor(private http:HttpClient) { }
 
   getAllProducts():any{
-    return this.http.get<any[]>('https://fakestoreapi.com/products');
+    return this.http.get<any>('https://fakestoreapi.com/products');
   }
 }

@@ -8,7 +8,7 @@ import { ShopService } from './ShopService/shop.service';
 })
 export class ShopComponent {
   constructor(private shopservice:ShopService){}
-  products : any[] = [];
+  products : any;
 
 //   {
 //     id:1,
@@ -20,12 +20,14 @@ export class ShopComponent {
 // },
     
   ngOnInit(){
-    this.shopservice.getAllProducts().subscribe((data : any[])=>{
-       this.products = [...data]
-       console.log(data);
-       
+    this.shopservice.getAllProducts().subscribe((data : any)=>{
+       this.products = data;
+       console.log("type ",typeof data);       
+       console.log("inside init ",this.products);       
     })
-    console.log("inside shop product array",this.products);
+    // console.log("log 1");
+    
+    // console.log("inside shop product array",this.products);
     
   }
 

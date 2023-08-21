@@ -6,9 +6,9 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./productcard.component.css']
 })
 export class ProductcardComponent {
-  @Input() productItem : any = {};
+  @Input() productItem : any ;
   ngOnInit(){
-    console.log("logging "+this.productItem[0]);
+    console.log("logging "+this.productItem);
   }
   
   
